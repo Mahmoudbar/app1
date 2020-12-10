@@ -1,0 +1,23 @@
+import { Component } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+@Component({
+  selector:'app-property-card',
+ // template:`<h1>I am a card2</h1>`,
+ templateUrl:'property-card.component.html',
+ // styles: ['h1 {font-weight: normal;}']
+ styleUrls: ['property-card.component.css']
+
+}
+
+)
+export class PropertyCardComponent {
+  Property: any = {
+    "Id":1,
+    "Name": "BMW",
+    "Type":"Auto",
+    "Price":40000
+
+  }
+
+}
