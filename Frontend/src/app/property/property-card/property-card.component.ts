@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
@@ -12,12 +12,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 )
 export class PropertyCardComponent {
-  Property: any = {
-    "Id":1,
-    "Name": "BMW",
-    "Type":"Auto",
-    "Price":40000
-
-  }
+@Input() property : any
 
 }
