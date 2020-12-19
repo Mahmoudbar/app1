@@ -11,11 +11,13 @@
       ]
     },
     "array-type": false,
+    "arrow-parens":false,
     "arrow-return-shorthand": true,
     "curly": true,
     "deprecation": {
       "severity": "warning"
     },
+    "no-string-literal":false,
     "eofline": true,
     "import-blacklist": [
       true,
