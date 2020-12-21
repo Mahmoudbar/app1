@@ -15,13 +15,13 @@ export class HousingService {
     getAllProperties(SellRent: number): Observable <IProperty[]> {
       return this.http.get('data/properties.json').pipe(
         map(data => {
-          const propertiesArray: Array<IProperty> = [];
+         const propertiesArray: Array<IProperty> = [];
 
-           /* for (const id in data) {
+         /*   for (const id in data) {
             if (data.hasOwnProperty(id) && data[id].SellRent === SellRent) {
             propertiesArray.push(data[id]);
             }
-           } */
+           } */ // Kommentar weg
            return propertiesArray;
        })
       );

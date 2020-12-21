@@ -13,7 +13,6 @@ import { IProperty } from '../IProperty.interface';
 
 )
 export class PropertyCardComponent {
-  @Input()
-  property!: IProperty; // ! weg
+@Input() property!: IProperty; // ! weg
 
 }
