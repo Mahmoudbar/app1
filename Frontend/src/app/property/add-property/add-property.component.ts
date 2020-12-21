@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-property.component.css']
 })
 export class AddPropertyComponent implements OnInit {
-  @ViewChild('Form') addPropertyForm!: NgForm; // ! weg
+  @ViewChild('Form') addPropertyForm= NgForm; // ! weg
 
 
   constructor(private router: Router) { }
