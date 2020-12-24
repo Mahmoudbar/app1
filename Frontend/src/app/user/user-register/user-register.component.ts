@@ -3,7 +3,6 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/model/user';
 import { AlertifyService } from 'src/app/services/alertify.service';
-import * as alertyfy from 'alertifyjs';
 
 @Component({
   selector: 'app-user-register',
@@ -12,10 +11,10 @@ import * as alertyfy from 'alertifyjs';
 })
 export class UserRegisterComponent implements OnInit {
 
-  registerationForm!: FormGroup;
+  registerationForm: FormGroup; // !weg
 
-  userSubmitted: boolean;
-  user: User;
+  userSubmitted: boolean; //! weg
+  user: User; // !weg
 
   constructor(private fb: FormBuilder,
               private userService: UserService,
@@ -42,14 +41,14 @@ export class UserRegisterComponent implements OnInit {
       confirmPassword: [null, Validators.required],
       mobile: [null, [Validators.required, Validators.maxLength(10)]]
     }, {
-      //validators: this.passwordMatchingValidatior
+      validators: this.passwordMatchingValidatior
     });
   }
 
-  /* passwordMatchingValidatior(fg: FormGroup): Validators {
+  passwordMatchingValidatior(fg: FormGroup): Validators {
     return fg.get('password').value === fg.get('confirmPassword').value ? null :
     {notmatched: true};
-  } */
+  }
 
 
   onSubmit() {
@@ -67,7 +66,7 @@ export class UserRegisterComponent implements OnInit {
   }
 
   onReset() {
-   // this.userSubmitted = false;
+    this.userSubmitted = false;
     this.registerationForm.reset();
   }
 
