@@ -3,7 +3,7 @@
   "Id":1,
   "SellRent":2,
   "Name": "BMW",
-  "Type":"Auto1",
+  "PType":"Auto1",
   "Price":10000,
   "Image":"prop-1"
 
@@ -12,7 +12,7 @@
     "Id":2,
     "SellRent":2,
     "Name": "BMW",
-    "Type":"Auto2",
+    "PType":"Auto2",
     "Price":20000,
     "Image":"prop-2"
 
@@ -21,7 +21,7 @@
       "Id":3,
       "SellRent":1,
       "Name": "BMW",
-      "Type":"Auto3",
+      "PType":"Auto3",
       "Price":30000,
       "Image":"prop-3"
 
@@ -31,7 +31,7 @@
         "Id":4,
         "SellRent":1,
         "Name": "Audi",
-        "Type":"Auto4",
+        "PType":"Auto4",
         "Price":40000,
         "Image":"prop-4"
 
@@ -41,7 +41,7 @@
           "Id":5,
           "SellRent":1,
           "Name": "Audi",
-          "Type":"Auto5",
+          "PType":"Auto5",
           "Price":50000,
           "Image":"prop-5"
 
@@ -51,7 +51,7 @@
             "Id":6,
             "SellRent":1,
             "Name": "Audi",
-            "Type":"Auto6",
+            "PType":"Auto6",
             "Price":60000
 
             }
