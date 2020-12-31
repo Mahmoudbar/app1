@@ -11,11 +11,9 @@ import { AlertifyService } from 'src/app/services/alertify.service';
 })
 export class UserRegisterComponent implements OnInit {
 
-  registerationForm: FormGroup; // !weg
-
-  userSubmitted: boolean; //! weg
-  user: User; // !weg
-
+  registerationForm: FormGroup;
+  user: User;
+  userSubmitted: boolean;
   constructor(private fb: FormBuilder,
               private userService: UserService,
               private alertify: AlertifyService ) { }
@@ -33,16 +31,13 @@ export class UserRegisterComponent implements OnInit {
   }
 
   createRegisterationForm() {
-    this.registerationForm =  this.fb.group
-    ({
+    this.registerationForm =  this.fb.group({
       userName: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(8)]],
       confirmPassword: [null, Validators.required],
       mobile: [null, [Validators.required, Validators.maxLength(10)]]
-    }, {
-      validators: this.passwordMatchingValidatior
-    });
+    }, {validators: this.passwordMatchingValidatior});
   }
 
   passwordMatchingValidatior(fg: FormGroup): Validators {
@@ -59,9 +54,9 @@ export class UserRegisterComponent implements OnInit {
       // this.user = Object.assign(this.user, this.registerationForm.value);
       this.userService.addUser(this.userData());
       this.onReset();
-      this.alertify.success('Congrats, you are successfully registered');
+      this.alertify.success('Registrierung erfolgreich');
   } else {
-      this.alertify.error('Kindly provide the required fields');
+      this.alertify.error('Bitte alle Felder ausfüllen');
   }
   }
 

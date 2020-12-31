@@ -23,10 +23,10 @@ export class UserLoginComponent implements OnInit {
     const token = this.authService.authUser(loginForm.value);
     if (token) {
       localStorage.setItem('token', token.userName);
-      this.alertify.success('Login Successful');
+      this.alertify.success('Login erfolgreich');
       this.router.navigate(['/']);
     } else {
-      this.alertify.error('User id or password is wrong');
+      this.alertify.error('Benutzername oder Passwort ist nicht korrekt');
     }
   }
 
