@@ -22,14 +22,14 @@ export class AddPropertyComponent implements OnInit {
   nextClicked: boolean;
   property = new Property();
   // Will come from masters
-  propertyTypes: Array<string> = ['PKW', 'LKW', 'Motorrad']
+  Fahrzeugtyp: Array<string> = ['PKW', 'LKW', 'Motorrad']
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
 
   propertyView: IPropertyBase = {
     Id: null,
     Name: '',
     Price: null,
-    SellRent: null,
+    NeuGebraucht: null,
     PType: null,
     FType: null,
     BHK: null,
@@ -52,17 +52,18 @@ export class AddPropertyComponent implements OnInit {
   CreateAddPropertyForm() {
     this.addPropertyForm = this.fb.group({
       BasicInfo: this.fb.group({
-        SellRent: ['1' , Validators.required],
-        BHK: [null, Validators.required],
-        PType: [null, Validators.required],
-        FType: [null, Validators.required],
+        NeuGebraucht: [null, Validators.required],
+        BHK: [null],
+        PType: [null],
+        FType: [null],
         Name: [null, Validators.required],
         City: [null, Validators.required]
       }),
 
       PriceInfo: this.fb.group({
         Price: [null, Validators.required],
-        BuiltArea: [null, Validators.required],
+        PossessionOn: [null],
+        BuiltArea: [null],
         CarpetArea: [null],
         Security: [null],
         Maintenance: [null],
@@ -70,14 +71,17 @@ export class AddPropertyComponent implements OnInit {
 
       AddressInfo: this.fb.group({
         FloorNo: [null],
-        TotalFloor: [null],
         Address: [null, Validators.required],
-        LandMark: [null],
+
       }),
 
       OtherInfo: this.fb.group({
-        RTM: [null, Validators.required],
-        PossessionOn: [null],
+        Gaenge: [null],
+        Kraftstoff: [null],
+        Feinstaubplakette: [null],
+        AnzahlSitzplaetze: [null],
+        AnzahlTueren: [null],
+        Farbe: [null],
         AOP: [null],
         Gated: [null],
         MainEntrance: [null],
@@ -106,8 +110,8 @@ export class AddPropertyComponent implements OnInit {
   // #endregion
 
   //#region <Form Controls>
-      get SellRent() {
-        return this.BasicInfo.controls.SellRent as FormControl;
+      get NeuGebraucht() {
+        return this.BasicInfo.controls.NeuGebraucht as FormControl;
       }
 
       get BHK() {
@@ -202,10 +206,10 @@ export class AddPropertyComponent implements OnInit {
     if (this.allTabsValid()) {
       this.mapProperty();
       this.housingService.addProperty(this.property);
-      this.alertify.success('Congrats, your property listed successfully on our website');
+      this.alertify.success('Ihre Anzeige wurde erfolgreich aufgegeben');
       console.log(this.addPropertyForm);
 
-      if(this.SellRent.value === '2') {
+      if(this.NeuGebraucht.value === '2') {
         this.router.navigate(['/rent-property']);
       } else {
         this.router.navigate(['/']);
@@ -219,7 +223,7 @@ export class AddPropertyComponent implements OnInit {
 
   mapProperty(): void {
     this.property.Id = this.housingService.newPropID();
-    this.property.SellRent = +this.SellRent.value;
+    this.property.NeuGebraucht = +this.NeuGebraucht.value;
     this.property.BHK = this.BHK.value;
     this.property.PType = this.PType.value;
     this.property.Name = this.Name.value;

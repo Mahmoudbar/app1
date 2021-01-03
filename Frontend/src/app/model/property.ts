@@ -2,7 +2,7 @@ import { IPropertyBase } from './ipropertybase';
 
 export class Property implements IPropertyBase {
   Id: number;
-  SellRent: number;
+  NeuGebraucht: number;
   Name: string;
   PType: string;
   BHK: number;
@@ -26,4 +26,10 @@ export class Property implements IPropertyBase {
   Description?: string;
   PostedOn: string;
   PostedBy: number;
+  AnzahlTueren:string;
+  AnzahlSitzplaetze: string;
+  Farbe?:string;
+  Gaenge:string;
+  Kraftstoff:string;
+  Feinstaubplakette:string;
 }

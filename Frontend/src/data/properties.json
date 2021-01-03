@@ -1,7 +1,7 @@
 [
   {
     "Id":1,
-    "SellRent":2,
+    "NeuGebraucht":2,
     "Name":"Birla House",
     "PType":"House",
     "BHK":2,
@@ -29,7 +29,7 @@
 
   {
     "Id":2,
-    "SellRent":2,
+    "NeuGebraucht":2,
     "Name":"Erose Flat",
     "PType":"Apartment",
     "BHK":3,
@@ -56,7 +56,7 @@
   },
   {
     "Id":1,
-    "SellRent":1,
+    "NeuGebraucht":1,
     "Name":"Gun Hill",
     "PType":"House",
     "BHK":3,
@@ -84,7 +84,7 @@
 
   {
     "Id":4,
-    "SellRent":1,
+    "NeuGebraucht":1,
     "Name":"Macro Home",
     "PType":"Duplex",
     "BHK":4,
@@ -111,7 +111,7 @@
   },
   {
     "Id":5,
-    "SellRent":1,
+    "NeuGebraucht":1,
     "Name":"Saint Church Villa",
     "PType":"House",
     "BHK":2,
@@ -139,7 +139,7 @@
 
   {
     "Id":6,
-    "SellRent":1,
+    "NeuGebraucht":1,
     "Name":"",
     "PType":"Duplex",
     "BHK":1,

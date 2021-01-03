@@ -13,16 +13,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./property-list.component.css']
 })
 export class PropertyListComponent implements OnInit {
-  SellRent = 1;
+  NeuGebraucht = 1;
   properties: IPropertyBase[];
 
   constructor(private route: ActivatedRoute, private housingService: HousingService) { }
 
   ngOnInit(): void {
    if (this.route.snapshot.url.toString()) {
-     this.SellRent =2; // gemeint, dass wir bei rent-property URL sind sonst sind wir am base URL
+     this.NeuGebraucht =2; // gemeint, dass wir bei rent-property URL sind sonst sind wir am base URL
    }
-   this.housingService.getAllProperties(this.SellRent).subscribe(
+   this.housingService.getAllProperties(this.NeuGebraucht).subscribe(
      data=>{
        this.properties=data;
        console.log(data);

@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./property-detail.component.css']
 })
 export class PropertyDetailComponent implements OnInit {
-  public propertyId: number; //! weg
+  public propertyId: number;
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {

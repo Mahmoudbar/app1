@@ -4,12 +4,14 @@
 
 .card-body h1 {
   font-family: fantasy;
+  font-size: xx-large;
   color: #0069d9;
 }
 
 .font-highlight {
   font-style: italic;
-  color: red;
+  font-size: x-large;
+  color: rgb(94, 173, 189);
 }
 .card-img-wrapper{
   overflow: hidden;
