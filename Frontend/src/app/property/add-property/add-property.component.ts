@@ -53,9 +53,7 @@ export class AddPropertyComponent implements OnInit {
     this.addPropertyForm = this.fb.group({
       BasicInfo: this.fb.group({
         NeuGebraucht: [null, Validators.required],
-        BHK: [null],
         PType: [null],
-        FType: [null],
         Name: [null, Validators.required],
         City: [null, Validators.required]
       }),
@@ -64,14 +62,11 @@ export class AddPropertyComponent implements OnInit {
         Price: [null, Validators.required],
         PossessionOn: [null],
         BuiltArea: [null],
-        CarpetArea: [null],
-        Security: [null],
-        Maintenance: [null],
       }),
 
       AddressInfo: this.fb.group({
         FloorNo: [null],
-        Address: [null, Validators.required],
+        Address: [null],
 
       }),
 
@@ -82,9 +77,6 @@ export class AddPropertyComponent implements OnInit {
         AnzahlSitzplaetze: [null],
         AnzahlTueren: [null],
         Farbe: [null],
-        AOP: [null],
-        Gated: [null],
-        MainEntrance: [null],
         Description: [null]
       })
       });
@@ -114,16 +106,31 @@ export class AddPropertyComponent implements OnInit {
         return this.BasicInfo.controls.NeuGebraucht as FormControl;
       }
 
-      get BHK() {
-        return this.BasicInfo.controls.BHK as FormControl;
+      get Farbe() {
+        return this.OtherInfo.controls.Farbe as FormControl;
+      }
+
+      get AnzahlTueren() {
+        return this.OtherInfo.controls.AnzahlTueren as FormControl;
+      }
+
+      get Feinstaubplakette() {
+        return this.OtherInfo.controls.Feinstaubplakette as FormControl;
+      }
+
+      get Kraftstoff() {
+        return this.OtherInfo.controls.Kraftstoff as FormControl;
+      }
+
+      get Gaenge() {
+        return this.OtherInfo.controls.Gaenge as FormControl;
+      }
+      get AnzahlSitzplaetze() {
+        return this.OtherInfo.controls.AnzahlSitzplaetze as FormControl;
       }
 
       get PType() {
         return this.BasicInfo.controls.PType as FormControl;
-      }
-
-      get FType() {
-        return this.BasicInfo.controls.FType as FormControl;
       }
 
       get Name() {
@@ -142,52 +149,16 @@ export class AddPropertyComponent implements OnInit {
         return this.PriceInfo.controls.BuiltArea as FormControl;
       }
 
-      get CarpetArea() {
-        return this.PriceInfo.controls.CarpetArea as FormControl;
-      }
-
-      get Security() {
-        return this.PriceInfo.controls.Security as FormControl;
-      }
-
-      get Maintenance() {
-        return this.PriceInfo.controls.Maintenance as FormControl;
-      }
-
       get FloorNo() {
         return this.AddressInfo.controls.FloorNo as FormControl;
-      }
-
-      get TotalFloor() {
-        return this.AddressInfo.controls.TotalFloor as FormControl;
       }
 
       get Address() {
         return this.AddressInfo.controls.Address as FormControl;
       }
 
-      get LandMark() {
-        return this.AddressInfo.controls.LandMark as FormControl;
-      }
-
-      get RTM() {
-        return this.OtherInfo.controls.RTM as FormControl;
-      }
-
       get PossessionOn() {
-        return this.OtherInfo.controls.PossessionOn as FormControl;
-      }
-
-      get AOP() {
-        return this.OtherInfo.controls.AOP as FormControl;
-      }
-
-      get Gated() {
-        return this.OtherInfo.controls.Gated as FormControl;
-      }
-
-      get MainEntrance() {
-        return this.OtherInfo.controls.MainEntrance as FormControl;
+        return this.PriceInfo.controls.PossessionOn as FormControl;
       }
 
       get Description() {
@@ -224,26 +195,20 @@ export class AddPropertyComponent implements OnInit {
   mapProperty(): void {
     this.property.Id = this.housingService.newPropID();
     this.property.NeuGebraucht = +this.NeuGebraucht.value;
-    this.property.BHK = this.BHK.value;
     this.property.PType = this.PType.value;
     this.property.Name = this.Name.value;
     this.property.City = this.City.value;
-    this.property.FType = this.FType.value;
     this.property.Price = this.Price.value;
-    this.property.Security = this.Security.value;
-    this.property.Maintenance = this.Maintenance.value;
     this.property.BuiltArea = this.BuiltArea.value;
-    this.property.CarpetArea = this.CarpetArea.value;
     this.property.FloorNo = this.FloorNo.value;
-    this.property.TotalFloor = this.TotalFloor.value;
     this.property.Address = this.Address.value;
-    this.property.Address2 = this.LandMark.value;
-    this.property.RTM = this.RTM.value;
-    this.property.AOP = this.AOP.value;
-    this.property.Gated = this.Gated.value;
-    this.property.MainEntrance = this.MainEntrance.value;
     this.property.Possession = this.PossessionOn.value;
     this.property.Description = this.Description.value;
+    this.property.Gaenge = this.Gaenge.value;
+    this.property.Kraftstoff = this.Kraftstoff.value;
+    this.property.Feinstaubplakette = this.Feinstaubplakette.value;
+    this.property.AnzahlSitzplaetze = this.AnzahlSitzplaetze.value;
+    this.property.Farbe = this.Farbe.value;
     this.property.PostedOn = new Date().toString();
   }
 
