@@ -30,7 +30,6 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-
               "src/styles.css"
             ],
             "scripts": []
@@ -123,6 +122,10 @@
               "devServerTarget": "app1:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

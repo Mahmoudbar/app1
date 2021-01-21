@@ -34,17 +34,12 @@
           routerLinkActive="active"
           >Login</a>
         </li>
-       <!--  <li *ngIf="loggedin()" class="nav-item">
-          <a class="nav-link" (click)="onLogout()"
-          >Logout</a>
-        </li> -->
+
         <div *ngIf="loggedin()" class="dropdown mr-5" dropdown>
           <a href="#" class="dropdown-toggle text-light" dropdownToggle (click)="false">
             Account {{loggedinUser}}
           </a>
           <div class="dropdown-menu" *dropdownMenu>
-              <!-- <a href="#"class="dropdown-item">
-                <i class="fas fa-tachometer-alt"></i> View Dashboard</a> -->
               <a href="#" class="dropdown-item">
                 <i class="far fa-user-circle"></i> Mein Profil</a>
               <a href="#" class="dropdown-item">

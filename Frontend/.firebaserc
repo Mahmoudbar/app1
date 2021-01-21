@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "carmarketplace3"
+  },
+  "targets": {
+    "carmarketplace3": {
+      "hosting": {
+        "app1": [
+          "carmarketplace3"
+        ]
+      }
+    }
+  }
+}

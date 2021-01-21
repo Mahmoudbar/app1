@@ -8,24 +8,22 @@
       <div class="card-body">
         <h1 class="card-title">{{property.Name}}</h1>
         <div>
-            <strong>{{property.Possession}} Erstzulassung {{property.PType}} €{{property.Price}}</strong>
+            <strong>Aufgegeben am: {{property.PostedOn}}</strong><br/>
+            <strong>{{property.PType}} {{property.Price}} €</strong>
         </div>
         <div>
            <strong>in {{property.City}}</strong>
         </div> <hr>
         <div>
             <strong>Kilometerstand: </strong>
-            {{property.BuiltArea}}
+            {{property.Kilometerstand}} km
         </div>
 
         <div>
-            <strong>Anzahl der Türen: </strong>
-            {{property.AnzahlTueren}}
+            <strong>Erstzulassung am: </strong>
+            {{property.Erstzulassung}}
         </div>
-       <!--  <div>
-            <strong>Furnishing Type: </strong>
-            {{property.FType}}
-        </div> -->
+
       </div>
       <div class="card-footer">
         <div class="btn-group d-flex">
@@ -43,24 +41,20 @@
           <div class="row">
               <div class="col-sm-6">
                   <div class="heading">
-                      <strong>Project Name</strong>
-                      <p>{{property.Name}}</p>
+                      <strong>Anzahl Sitzplätze</strong>
+                      <p>{{property.AnzahlSitzplaetze}}</p>
                   </div>
-
                   <div class="heading">
-                      <strong>Telefonnummer</strong>
-                      <p>{{property.FloorNo}}</p>
-                  </div>
+                    <strong>Farbe</strong>
+                    <p>{{property.Farbe}}</p>
+                </div>
 
-                 <!--  <div class="heading">
-                      <strong>Age of Property</strong>
-                      <p>{{property.AOP}}</p>
-                  </div> -->
+                <div class="heading">
+                    <strong>Gänge</strong>
+                    <p>{{property.Gaenge}}</p>
+                </div>
 
-                  <div class="heading">
-                      <strong>Posession</strong>
-                      <p>{{property.Possession}}</p>
-                  </div>
+
               </div>
 
               <div class="col-sm-6">
@@ -70,14 +64,11 @@
                   </div>
 
                   <div class="heading">
-                      <strong>Farbe</strong>
-                      <p>{{property.Farbe}}</p>
+                    <strong>Anzahl der Türen</strong>
+                    <p>{{property.AnzahlTueren}}</p>
                   </div>
 
-                  <div class="heading">
-                      <strong>Gaenge</strong>
-                      <p>{{property.Gaenge}}</p>
-                  </div>
+
                   <div class="heading">
                       <strong>Kraftstoff</strong>
                       <p>{{property.Kraftstoff}}</p>
@@ -91,22 +82,15 @@
               </div>
             </div>
         </tab>
-        <tab heading="Adresse">
-          <div class="col-sm-12">
-            <h1>Adresse</h1>
-            <div class="heading">
-                <strong>{{property.Address}}</strong><br/>
-                <!-- <strong>{{property.Address2}}</strong><br/> -->
-                <strong>{{property.City}}</strong>
-            </div>
-        </div>
 
-        </tab>
         <tab heading="Fotos">
           <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
         </tab>
-        <tab heading="Kontact">
+        <tab heading="Kontakt">
           <h1>Kontaktdetail</h1>
+          <strong>{{property.Address}}</strong><br/>
+          <strong>{{property.City}}</strong><br/>
+          <strong>{{property.Telefonnummer}}</strong>
         </tab>
       </tabset>
     </div>

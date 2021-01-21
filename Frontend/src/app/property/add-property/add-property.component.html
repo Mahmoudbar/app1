@@ -52,52 +52,6 @@
                     Bitte Fahrzeugtyp eingeben
                   </div>
                 </div>
-             <!--    <div class="form-group col-12">
-                  <p>BHK</p>
-                  <div class="btn-group" btnRadioGroup
-                  formControlName="BHK"
-                  [(ngModel)]="propertyView.BHK" name="BHK">
-                    <label
-                      *ngFor="let bhk of [1,2,3,4]"
-                      class="btn btn-outline-primary mr-2"
-                      [btnRadio]="bhk" tabindex="0" role="button"
-                      name="BHK">
-                      {{bhk}}
-                    </label>
-                  </div>
-                  <div class="error-block" *ngIf="BHK.invalid && nextClicked">
-                    Please select BHK
-                  </div>
-                </div>
-                <div class="form-group col-12">
-                  <p>Furnishing Type</p>
-                  <div class="btn-group" btnRadioGroup
-                  formControlName="FType"
-                  [(ngModel)]="propertyView.FType">
-                  <label
-                    *ngFor="let ftype of furnishTypes"
-                    class="btn btn-outline-primary mr-2"
-                    [btnRadio]="ftype" tabindex="0" role="button"
-                    name="FurnishType">
-                    {{ftype}}
-                  </label>
-                  </div>
-                  <div class="error-block" *ngIf="FType.invalid && nextClicked">
-                    Please select furnishing type
-                  </div>
-                </div>
-
-                <div class="form-group col-12">
-                  <label>in Building/Society/Project</label>
-                  <input type="text" class="form-control"
-                  ngModel
-                  formControlName="Name"
-                  [(ngModel)]="propertyView.Name">
-                  <div class="error-block"
-                  *ngIf="Name.invalid && (nextClicked || Name.touched)">
-                    Please select building, society or project name
-                  </div>
-                </div> -->
 
                 <div class="form-group col-12">
                   <label>Stadt</label>
@@ -119,7 +73,7 @@
               </tab>
 
               <tab heading="Preis & Zulassung" formGroupName="PriceInfo">
-                  <div class="form-group col-12">
+                <!--   <div class="form-group col-12">
                     <label *ngIf="NeuGebraucht.value==1">Preis</label>
                     <label *ngIf="NeuGebraucht.value==2">Preis</label>
                     <input type="text" class="form-control"
@@ -128,10 +82,36 @@
                     <div class="error-block"
                     *ngIf="Price.invalid && (nextClicked || Price.touched)">
                       Bitte Preis eingeben
+                    </div>
+                  </div> -->
+                  <div class="form-group col-12">
+                    <label>Preis</label>
+                    <input type="text"
+                    class="form-control"
+                    formControlName="Price"
+                    [(ngModel)]="propertyView.Price">
+                    <div class="error-block"
+                    *ngIf="Price.invalid && (nextClicked || Price.touched)">
+                    Bitte Preis eingeben
+                    </div>
+                  </div>
+
+
+                   <div class="form-group col-12">
+                    <label>Erstzulassung</label>
+                    <input type="text"
+                    class="form-control"
+                    formControlName="Erstzulassung"
+                    [(ngModel)]="propertyView.Erstzulassung">
+                    <div class="error-block"
+                    *ngIf="Erstzulassung.invalid && (nextClicked || Erstzulassung.touched)">
+                      Bitte Datum in MM.JJJJ Format eingeben
+
+
 
                     </div>
                   </div>
-                  <div
+                 <!--  <div
                   *ngIf="NeuGebraucht.value==2"
                 class="form-group col-6">
                   <label>Erstzulassung (wird in MM.JJJJ eingegeben)</label>
@@ -143,11 +123,6 @@
                   [bsConfig]="{containerClass: 'theme-dark-blue',
                   dateInputFormat: 'MM.YYYY'}">
 
-                  <!-- <div class="error-block"
-                  *ngIf="PossessionOn.invalid && (nextClicked || PossessionOn.touched)">
-                    Bitte Erstzulassung eingeben
-
-                  </div> -->
                 </div>
                 <div
                   *ngIf="NeuGebraucht.value==1"
@@ -158,44 +133,16 @@
                   formControlName="PossessionOn"
                   bsDatepicker
                   [bsConfig]="{containerClass: 'theme-dark-blue',
-                  dateInputFormat: 'DD-MM-YYYY'}">
-                </div>
-
-                 <!--  <div *ngIf="NeuGebraucht.value==2">
-                    <div class="form-group col-12">
-                      <label>Security (in USD)</label>
-                      <input type="text"
-                      formControlName="Security"
-                      class="form-control">
-                    </div>
-
-                    <div class="form-group col-12">
-                      <label>Maintenance (in USD)</label>
-                      <input type="text"
-                      formControlName="Maintenance"
-                      class="form-control">
-                    </div>
-                  </div> -->
+                  dateInputFormat: 'MM.YYYY'}">
+                </div> -->
 
                   <div class="form-group col-12">
                     <label>Kilometerstand (in km)</label>
                     <input type="text"
                     class="form-control"
-                    [(ngModel)]="propertyView.BuiltArea"
-                    formControlName="BuiltArea">
-                    <!-- <div class="error-block"
-                    *ngIf="BuiltArea.invalid && nextClicked">
-                      Please select built up area
-                    </div> -->
+                    [(ngModel)]="propertyView.Kilometerstand"
+                    formControlName="Kilometerstand">
                   </div>
-
-                  <!-- <div class="form-group col-12">
-                    <label>Carpet Area (in Sqr Feet)</label>
-                    <input type="text"
-                    formControlName="CarpetArea"
-                    class="form-control">
-                  </div> -->
-
                   <div class="form-group col-12">
                     <button type="button" class="btn btn-primary btn-block"
                     (click)="selectTab(2, PriceInfo.valid)">Weiter</button>
@@ -209,34 +156,16 @@
                 <div class="form-group col-12">
                   <label>Telefonnummer</label>
                   <input type="text"
-                  formControlName="FloorNo"
+                  formControlName="Telefonnummer"
                   class="form-control">
                 </div>
-
-                <!-- <div class="form-group col-12">
-                  <label>Total Floor</label>
-                  <input type="text"
-                  formControlName="TotalFloor"
-                  class="form-control">
-                </div> -->
 
                 <div class="form-group col-12">
                   <label>E-mail Adresse</label>
                   <input type="text"
                   class="form-control"
                   formControlName="Address">
-                  <!-- <div class="error-block"
-                  *ngIf="Address.invalid && (nextClicked || Address.touched)">
-                    Bitte E-mail Adresse eingeben
-                  </div> -->
                 </div>
-
-                <!-- <div class="form-group col-12">
-                  <label>Landmark</label>
-                  <input type="text"
-                  formControlName="LandMark"
-                  class="form-control">
-                </div> -->
 
                 <div class="form-group col-12">
                   <button type="button" class="btn btn-primary btn-block"
@@ -248,72 +177,7 @@
               </tab>
 
               <tab heading="Weitere Details" formGroupName="OtherInfo">
-                <!-- <div class="form-group col-12">
-                  <p>Ready to Move</p>
-                  <div class="btn-group" btnRadioGroup
-                  formControlName="RTM">
-                    <label class="btn btn-outline-primary mr-2"
-                      btnRadio=1 tabindex="0" role="button"
-                      name="RTM">Yes
-                    </label>
-                    <label class="btn btn-outline-primary"
-                      btnRadio=2  tabindex="0" role="button" name="RTM">No
-                    </label>
-                  </div>
-                  <div class="error-block" *ngIf="RTM.invalid && nextClicked">
-                    Please select ready to move
-                  </div>
-                </div> -->
 
-
-                <!-- <div
-                *ngIf="RTM.value==2"
-                class="form-group col-6">
-                  <label>Possession/Avaialble From</label>
-                  <input type="text"
-                  class="form-control"
-                  formControlName="PossessionOn"
-                  bsDatepicker
-                  [bsConfig]="{containerClass: 'theme-dark-blue',
-                  dateInputFormat: 'DD-MM-YYYY'}">
-                </div>
-
-                <div
-                *ngIf="RTM.value==1"
-                class="form-group col-3">
-                  <label>Age of Property</label>
-                  <input type="text"
-                  formControlName="AOP"
-                  class="form-control">
-                </div> -->
-
-
-               <!--  <div class="form-group col-12">
-                  <p>Gated Community</p>
-                  <div class="btn-group"
-                  btnRadioGroup
-                  formControlName="Gated">
-                    <label class="btn btn-outline-primary mr-2"
-                    btnRadio=1 tabindex="0" role="button" name="Gated">Yes</label>
-                    <label class="btn btn-outline-primary"
-                    btnRadio=2  tabindex="0" role="button" name="Gated">No</label>
-                  </div>
-                </div> -->
-
-                <!-- <div class="form-group col-12">
-                  <p>Main Entrance</p>
-                  <div class="btn-group" btnRadioGroup
-                  formControlName="MainEntrance">
-                    <label class="btn btn-outline-primary mr-2"
-                    btnRadio=1 tabindex="0" role="button" name="Entrance">East</label>
-                    <label class="btn btn-outline-primary"
-                    btnRadio=2  tabindex="0" role="button" name="Entrance">West</label>
-                    <label class="btn btn-outline-primary"
-                    btnRadio=3  tabindex="0" role="button" name="Entrance">South</label>
-                    <label class="btn btn-outline-primary"
-                    btnRadio=4  tabindex="0" role="button" name="Entrance">North</label>
-                  </div>
-                </div> -->
 
                 <div class="form-group col-12">
                   <label>Anzahl Sitzplätze</label>

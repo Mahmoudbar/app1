@@ -23,7 +23,7 @@ export class AddPropertyComponent implements OnInit {
   property = new Property();
   // Will come from masters
   Fahrzeugtyp: Array<string> = ['PKW', 'LKW', 'Motorrad']
-  furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
+  /* furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished'] */
 
   propertyView: IPropertyBase = {
     Id: null,
@@ -31,12 +31,12 @@ export class AddPropertyComponent implements OnInit {
     Price: null,
     NeuGebraucht: null,
     PType: null,
-    FType: null,
-    BHK: null,
-    BuiltArea: null,
+    Kilometerstand: null,
     City: null,
-    RTM: null
+    Erstzulassung: null
+
   };
+
 
 
   constructor(
@@ -60,12 +60,12 @@ export class AddPropertyComponent implements OnInit {
 
       PriceInfo: this.fb.group({
         Price: [null, Validators.required],
-        PossessionOn: [null],
-        BuiltArea: [null],
+        Erstzulassung: [null, Validators.required],
+        Kilometerstand: [null],
       }),
 
       AddressInfo: this.fb.group({
-        FloorNo: [null],
+        Telefonnummer: [null],
         Address: [null],
 
       }),
@@ -145,20 +145,20 @@ export class AddPropertyComponent implements OnInit {
         return this.PriceInfo.controls.Price as FormControl;
       }
 
-      get BuiltArea() {
-        return this.PriceInfo.controls.BuiltArea as FormControl;
+      get Kilometerstand() {
+        return this.PriceInfo.controls.Kilometerstand as FormControl;
       }
 
-      get FloorNo() {
-        return this.AddressInfo.controls.FloorNo as FormControl;
+      get Telefonnummer() {
+        return this.AddressInfo.controls.Telefonnummer as FormControl;
       }
 
       get Address() {
         return this.AddressInfo.controls.Address as FormControl;
       }
 
-      get PossessionOn() {
-        return this.PriceInfo.controls.PossessionOn as FormControl;
+      get Erstzulassung() {
+        return this.PriceInfo.controls.Erstzulassung as FormControl;
       }
 
       get Description() {
@@ -199,17 +199,18 @@ export class AddPropertyComponent implements OnInit {
     this.property.Name = this.Name.value;
     this.property.City = this.City.value;
     this.property.Price = this.Price.value;
-    this.property.BuiltArea = this.BuiltArea.value;
-    this.property.FloorNo = this.FloorNo.value;
+    this.property.Kilometerstand = this.Kilometerstand.value;
+    this.property.Telefonnummer = this.Telefonnummer.value;
     this.property.Address = this.Address.value;
-    this.property.Possession = this.PossessionOn.value;
+    this.property.Erstzulassung = this.Erstzulassung.value;
     this.property.Description = this.Description.value;
     this.property.Gaenge = this.Gaenge.value;
     this.property.Kraftstoff = this.Kraftstoff.value;
     this.property.Feinstaubplakette = this.Feinstaubplakette.value;
     this.property.AnzahlSitzplaetze = this.AnzahlSitzplaetze.value;
+    this.property.AnzahlTueren = this.AnzahlTueren.value;
     this.property.Farbe = this.Farbe.value;
-    this.property.PostedOn = new Date().toString();
+    this.property.PostedOn = new Date();
   }
 
   allTabsValid(): boolean {

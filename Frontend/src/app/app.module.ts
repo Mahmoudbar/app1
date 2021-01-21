@@ -26,7 +26,7 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
 import { UserService } from './services/user.service';
 import { AlertifyService } from './services/alertify.service';
 import { AuthService } from './services/auth.service';
-
+import "firebase/app";
 import { from } from 'rxjs';
 import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 import { FilterPipe } from './Pipes/filter.pipe';
@@ -56,7 +56,7 @@ const appRoutes: Routes=  [
       UserLoginComponent,
       UserRegisterComponent,
       FilterPipe,
-      SortPipe
+      SortPipe,
    ],
   imports: [
     BrowserModule,
